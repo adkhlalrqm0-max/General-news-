@@ -24,13 +24,12 @@
       background-color: #111;
     }
 
-    /* شعار الموقع مع إطار متغير الألوان */
     .logo-wrapper {
       display: inline-block;
       padding: 5px;
-      border: 3px solid #00bfff; /* اللون الأساسي عند البداية */
+      border: 3px solid #00bfff;
       border-radius: 15px;
-      animation: colorBorder 5s infinite; /* تحريك الألوان */
+      animation: colorBorder 5s infinite;
       transition: transform 0.3s, box-shadow 0.3s;
     }
     .logo-wrapper img {
@@ -43,7 +42,6 @@
       box-shadow: 0 0 15px #00bfff;
     }
 
-    /* تحريك لون الإطار بين أزرق فاتح، أزرق غامق وبنفسجي */
     @keyframes colorBorder {
       0% { border-color: #00bfff; }
       33% { border-color: #005fbb; }
@@ -57,7 +55,6 @@
       margin: 10px 0;
     }
 
-    /* شريط الأزرار قابل للسحب */
     .nav-container {
       overflow-x: auto;
       white-space: nowrap;
@@ -65,7 +62,9 @@
       background-color: #111;
       border-bottom: 2px solid #333;
       padding: 10px 0;
-      scrollbar-width: thin;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
     .nav-container::-webkit-scrollbar {
       height: 6px;
@@ -104,7 +103,11 @@
       transform: scale(1.05);
     }
 
-    /* أيقونات منصات التواصل مع إطار أزرق */
+    .social-icons {
+      display: inline-flex;
+      gap: 5px;
+      padding-right: 10px;
+    }
     .social-icon {
       display: inline-flex;
       align-items: center;
@@ -159,6 +162,11 @@
       line-height: 1.5;
       color: #ccc;
     }
+
+    .ad-frame {
+      margin-top: 10px;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
@@ -176,58 +184,48 @@
         <button onclick="showSection('sports', this)">الرياضة</button>
         <button onclick="showSection('health', this)">الصحة</button>
         <button onclick="showSection('science', this)">العلوم</button>
-        <button>+
-          
-          <a href="https://www.facebook.com" target="_blank" class="social-icon">
-            <img src="https://i.postimg.cc/tTmWSDkN/Screenshot-20251031-211935-4.jpg" alt="Facebook">
-          </a>
-          <a href="https://twitter.com" target="_blank" class="social-icon">
-            <img src="https://i.postimg.cc/X7DFn26k/Screenshot-20251031-202646-2.jpg" alt="Twitter">
-          </a>
-          <a href="https://www.youtube.com" target="_blank" class="social-icon">
-            <img src="https://i.postimg.cc/1z78sXFs/Screenshot-20251031-211935-3.jpg" alt="YouTube">
-          </a>
-          <a href="https://www.instagram.com" target="_blank" class="social-icon">
-            <img src="https://i.postimg.cc/8CG8Kgz8/Screenshot-20251031-211935-5.jpg" alt="Instagram">
-          </a>
-          <a href="https://t.me" target="_blank" class="social-icon">
-            <img src="https://i.postimg.cc/567RNTLP/Screenshot-20251031-211935-6.jpg" alt="Telegram">
-          </a>
-        </button>
+        <button onclick="showSection('entertainment', this)">الترفيه</button>
+      </div>
+      <div class="social-icons">
+        <a href="https://www.facebook.com" target="_blank" class="social-icon"><img src="https://i.postimg.cc/tTmWSDkN/Screenshot-20251031-211935-4.jpg" alt="Facebook"></a>
+        <a href="https://twitter.com" target="_blank" class="social-icon"><img src="https://i.postimg.cc/X7DFn26k/Screenshot-20251031-202646-2.jpg" alt="Twitter"></a>
+        <a href="https://www.youtube.com" target="_blank" class="social-icon"><img src="https://i.postimg.cc/1z78sXFs/Screenshot-20251031-211935-3.jpg" alt="YouTube"></a>
+        <a href="https://www.instagram.com" target="_blank" class="social-icon"><img src="https://i.postimg.cc/8CG8Kgz8/Screenshot-20251031-211935-5.jpg" alt="Instagram"></a>
+        <a href="https://t.me" target="_blank" class="social-icon"><img src="https://i.postimg.cc/567RNTLP/Screenshot-20251031-211935-6.jpg" alt="Telegram"></a>
       </div>
     </div>
   </header>
 
   <main id="content">
+    <!-- أمثلة المقالات مع الإعلان أسفل كل مقال -->
     <div class="article politics">
       <img src="https://i.postimg.cc/njzfSvJW/Screenshot-20251030-042050-3.jpg" alt="صورة المقال">
       <h3>اقتصاد جديد 2025</h3>
       <p>مقال عن الاقتصاد العالمي وتطورات السوق الحالية.</p>
+      <div class="ad-frame">
+        <iframe data-aa='2415731' src='//ad.a-ads.com/2415731/?size=320x50'
+                style='border:0; padding:0; width:320px; height:50px; display:block; margin:auto;'></iframe>
+      </div>
     </div>
+
     <div class="article tech">
       <img src="https://i.postimg.cc/njzfSvJW/Screenshot-20251030-042050-3.jpg" alt="صورة المقال">
       <h3>أحدث التكنولوجيا</h3>
       <p>تقرير عن الابتكارات التقنية لعام 2025.</p>
+      <div class="ad-frame">
+        <iframe data-aa='2415731' src='//ad.a-ads.com/2415731/?size=320x50'
+                style='border:0; padding:0; width:320px; height:50px; display:block; margin:auto;'></iframe>
+      </div>
     </div>
+
     <div class="article sports">
       <img src="https://i.postimg.cc/njzfSvJW/Screenshot-20251030-042050-3.jpg" alt="صورة المقال">
       <h3>ريال مدريد يفوز بدوري الأبطال</h3>
       <p>حقق ريال مدريد فوزًا مثيرًا في النهائي بنتيجة 2-1.</p>
-    </div>
-    <div class="article health">
-      <img src="https://i.postimg.cc/njzfSvJW/Screenshot-20251030-042050-3.jpg" alt="صورة المقال">
-      <h3>الصحة العامة</h3>
-      <p>نصائح عن الصحة واللياقة البدنية.</p>
-    </div>
-    <div class="article science">
-      <img src="https://i.postimg.cc/njzfSvJW/Screenshot-20251030-042050-3.jpg" alt="صورة المقال">
-      <h3>اكتشافات علمية</h3>
-      <p>مقال عن أحدث الاكتشافات العلمية.</p>
-    </div>
-    <div class="article entertainment">
-      <img src="https://i.postimg.cc/njzfSvJW/Screenshot-20251030-042050-3.jpg" alt="صورة المقال">
-      <h3>الترفيه والفنون</h3>
-      <p>أخبار عن الأفلام والفنون.</p>
+      <div class="ad-frame">
+        <iframe data-aa='2415731' src='//ad.a-ads.com/2415731/?size=320x50'
+                style='border:0; padding:0; width:320px; height:50px; display:block; margin:auto;'></iframe>
+      </div>
     </div>
   </main>
 
@@ -241,8 +239,3 @@
         article.style.display = (section === 'all' || article.classList.contains(section)) ? 'block' : 'none';
       });
     }
-    window.onload = () => showSection('all', document.querySelector('.nav-buttons .active'));
-  </script>
-</body>
-</html>
-
